@@ -18,6 +18,8 @@ Three sections. Fill all three.
 <!-- 2-3 lines. Who is talking when you comment on an issue: your
 experience level stated plainly, what you are doing in this repo, what
 readers can expect from you. This is the register your rules protect. -->
+I am a sophomore computer science student at Howard University. I have minimal experience with GitHub, but I'm always willing to learn, and I have very strong coding skills.
+Most likely, I am working in this repo to strengthen my GitHub skills. 
 
 ## Rules I write by
 
@@ -37,8 +39,41 @@ Format each rule like this:
 - Right: "<the line to post instead>"
 -->
 
+### Rule: Precision
+
+Use the most direct and specific language possible.
+
+- Wrong: "I believe that the most realistic timeline for this issue to be shipped is within 2 days."
+- Right: "Realistically, I can ship this issue in two days."
+
+### Rule: Qualifications
+
+Use any qualifiers necessary for optimal precision. 
+
+- Wrong: "I will have this issue shipped in 2 days."
+- Right: "Realistically, I'll have this issue shipped in two days."
+
+### Rule: Context
+
+Give as much context as possible. 
+
+- Wrong: "I failed to recreate this bug."
+- RIght: "I'm operating on a Mac OS in the most recent version of the software, and I followed the recreation steps precisely. I was unable to recreate this bug."
+
+### Rule: Kindness
+
+Use precise and technical language, but in any situation where kindness can be incorporated, apply it.
+
+- Wrong: "Your suggestion failed."
+- Right: "Unfortunately, your suggestion was not successful. I appreciate the assistance."
+
+
 ## Things I never post
 
 <!-- A short list. Promises you cannot keep, tones you refuse,
 shortcuts you know you reach for when tired. The skill quotes this
 list back at you when a draft crosses it. -->
+
+Promises I cannot keep. 
+Personal information.
+Unkind or derogatory language.

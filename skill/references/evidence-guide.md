@@ -25,29 +25,45 @@ like. Write the map you wish your grader had.
 
 ## Environment
 
-<!-- Where the environment record lives, and what a sufficient one
-looks like against the issue's stated target. -->
+Where it lives:
+- Eval bundle: the first lines of the "Candidate repro report" (an "Environment:" line or similar). The issue's target environment is in the "Issue" section (body, "Environment:" line) and the "Thread highlights". The "Repo facts" block says what the bug-report template asks for.
+- Live: the repro draft's environment line; the issue body and thread for the target; the repo's issue template.
+
+What good looks like: the report names OS, the tool's version, and anything the behavior depends on (shell, driver, build profile, runtime) that the issue's behavior plausibly turns on. Where it differs from the issue's target, the report says so (for example "issue filed on 0.63.1, I ran 0.64.1"). A missing record, or a silent deviation (an older version, a different OS on an OS-specific issue), is a fail.
 
 ## Steps
 
-<!-- Where the reproduction steps live, and what makes them followable
-by a stranger, starting state to trigger. -->
+Where it lives:
+- Eval bundle: the commands and numbered steps in the "Candidate repro report". Compare them against the steps and trigger in the "Issue" section.
+- Live: the repro draft's commands, read as if you had only the draft.
+
+What good looks like: starting from a clean machine, a stranger can run each step in order and reach the trigger the issue names. The trigger itself must be present and unchanged (the same syntax, flags, input, config). Inputs are inline or public. Fail on a skipped or altered trigger, or on a step that needs a private repo, an unshared config, or an unstated setting.
 
 ## Behavior shown
 
-<!-- Where the artifacts live (output excerpts, logs, screenshots),
-and what it means for an artifact to show the issue's behavior rather
-than an adjacent one. -->
+Where it lives:
+- Eval bundle: the output excerpts, logs, exit codes, and transcripts in the "Candidate repro report", read against the symptom described in the "Issue" body (the exact error text, panic, exit code, or visible effect).
+- Live: the pasted output or screenshots in the draft, against the issue's description.
+
+What good looks like: the artifact is the issue's symptom, not a neighbor. Compare the specifics: the same error message or exit code, produced with the issue's input. Adjacent behaviors to reject: a graceful validation error where the issue reports a crash, a syntax error from an input the author modified, an old version's different error, garbled output where the issue reports a crash, or a transcript that only shows the tool starting. A control run (changing one thing and seeing the symptom go away) strengthens it. Ignore formatting and length; judge only the artifact.
 
 ## Honesty
 
-<!-- Where claims and their backing meet: how to tell a report that
-says exactly what happened (including an honest cannot-reproduce) from
-one that claims more than its evidence shows. -->
+Where it lives:
+- Eval bundle: the conclusion sentences in the "Candidate repro report" ("confirmed", "reproduced", "root cause is...", "also affects...") and the assertions in the "Candidate claim comment", each read against the artifacts in the report.
+- Live: the same sentences in the drafts.
+
+What good looks like: every claim has a shown artifact behind it. "I verified" with no transcript, a root-cause diagnosis with no evidence, certainty or generalization (other platforms, other releases) beyond what was run, and a narration that misdescribes the artifact are all fails. A report that says "could not reproduce" and shows the real attempt, with what differed from the issue's setup, is a pass: an honest negative is ready to post.
 
 ## Comms
 
-<!-- Where the words meet the repo: the claim comment against the
-issue, the comments against the repo's stated templates and
-contribution policy (including AI-use disclosure requirements), and
-what specific-and-honest looks like next to boilerplate. -->
+Where it lives:
+- Eval bundle: the "Candidate claim comment" and the report's prose, read against the "Issue" section, and against the "Repo facts" block's bug-report template asks and contribution policy (including any AI-use policy).
+- Live: the draft comments, the repo's issue template, CONTRIBUTING.md, and any AI policy file.
+
+What good looks like: 
+- The claim is specific: it names what this author will do on this issue, tied to the issue's content, and promises no guaranteed fix or timeline. Interchangeable "assign me" or "+1" text is a fail.
+- The comments supply what the template asks for.
+- Disclosure is required only when the repo-facts policy text explicitly says to disclose, declare, or state AI use (look for those verbs). Then the comments must contain it. Treat every package as AI-assisted when applying this.
+- A policy that only welcomes AI, or only asks the contributor to understand and take responsibility, imposes nothing visible: no disclosure needed, and none is penalized.
+- A policy that says comments must be human-written in the contributor's own words is met by first-person, issue-specific comments; it does not call for a disclosure line.
